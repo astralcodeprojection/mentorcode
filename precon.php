@@ -32,18 +32,20 @@ if($_SESSION["logged_in"] != "true"){
             <?php
 
             require_once("connect-db.php");
-            $error = $success = $itemId = $name = $price = $qty = $descr = "";
+            $error = $success = $itemId = $userId =$name = $price = $qty = $descr = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $itemId = $_POST["itemId"];
+                $userId = $_POST["userId"];
                 $name = $_POST["name"];
                 $price = $_POST["price"];
                 $qty = $_POST["qty"];
                 $descr = $_POST["descr"];
                 
-             $sql = "insert into prepurchase (name, price, qty, descr) VALUES (:name, :price, :qty, :descr)";
+             $sql = "insert into prepurchase (userId, name, price, qty, descr) VALUES (:userId, :name, :price, :qty, :descr)";
                 
                 $statement1 = $db->prepare($sql);
                 
+                $statement1->bindValue(':userId', $userId);
                 $statement1->bindValue(':name', $name);
                 $statement1->bindValue(':price', $price);
                 $statement1->bindValue(':qty', $qty);

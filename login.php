@@ -24,6 +24,7 @@ session_start();
                 <br><br>
                 Password: <input type="password" name="password">
                 <br><br>
+                
                 <button type="submit" value="Submit">Submit</button>
             </form>
         </article>

@@ -67,6 +67,7 @@ if($_SESSION["logged_in"] != "true"){
                 <?php    
                     foreach($customers as $c){?>
                         <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
+                        <input type="text" name="userId" value="<?php echo $c["userId"];?>">
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
                         <br><br>
