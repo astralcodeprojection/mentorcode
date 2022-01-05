@@ -1,17 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 15, 2020 at 03:11 AM
--- Server version: 5.7.26
--- PHP Version: 7.4.1
+-- Generation Time: Jan 05, 2022 at 10:12 PM
+-- Server version: 5.7.30
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `qqehzapi_tttt`
+-- Database: `tttt`
 --
 
 -- --------------------------------------------------------
@@ -75,20 +75,12 @@ INSERT INTO `orders` (`orderId`, `name`, `total`, `fname`, `lname`, `addr`, `sta
 
 CREATE TABLE `prepurchase` (
   `preId` int(25) NOT NULL,
+  `userId` int(9) NOT NULL,
   `name` varchar(250) NOT NULL,
   `price` int(250) NOT NULL,
   `qty` int(250) NOT NULL,
   `descr` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `prepurchase`
---
-
-INSERT INTO `prepurchase` (`preId`, `name`, `price`, `qty`, `descr`) VALUES
-(3, 'Cheese Quesadilla', 7, 8, 'A blend of traditional cheeses melted in a flour totilla.'),
-(4, 'Enchiladas', 7, 9999, 'A cheese topped beef enchilada that is paired with a traditional spicy red sauce.'),
-(5, 'Steak Tacos', 8, 7, 'A pair of steak tacos topped with lettuce and cheese.');
 
 -- --------------------------------------------------------
 
@@ -116,7 +108,8 @@ INSERT INTO `users` (`userId`, `username`, `password`, `email`, `fname`, `lname`
 (1, 'd', 'd', 'd@g.com', 'lhkj', 'gfsd', '23 f', 'wes', 'visa'),
 (2, '1', 'ldkfj', 'asd@gmail.com', 'afds', 'adsf', '76 d', 'lhkj', 'lkh'),
 (3, 'ted', 'ted', 'ted@tmail.com', 'ted', 'teddly', 'ted tn.', 'tn', 'tollars'),
-(4, 'lklk', 'lklk', 'jghk@kjh.com', 'huhkj', 'hgvj', 'h', 'h', 'hv');
+(4, 'lklk', 'lklk', 'jghk@kjh.com', 'huhkj', 'hgvj', 'h', 'h', 'hv'),
+(5, 'yee', 'yee', 'yee@gmail.com', 'y', 'ee', '34 tee', 'Wi', 'dick');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +131,8 @@ ALTER TABLE `orders`
 -- Indexes for table `prepurchase`
 --
 ALTER TABLE `prepurchase`
-  ADD PRIMARY KEY (`preId`);
+  ADD PRIMARY KEY (`preId`),
+  ADD UNIQUE KEY `userId` (`userId`);
 
 --
 -- Indexes for table `users`
@@ -166,10 +160,10 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `prepurchase`
 --
 ALTER TABLE `prepurchase`
-  MODIFY `preId` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `preId` int(25) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userId` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
