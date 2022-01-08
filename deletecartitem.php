@@ -1,13 +1,5 @@
 <?php
-// start the session
-session_start();
-if($_SESSION["logged_in"] != "true"){
-?>
-<script>
-    window.location.replace("login.php");
-</script>
-<?php
-}
+    require_once("userscript.php");
 ?>
 <!DOCTYPE html>
 <html>

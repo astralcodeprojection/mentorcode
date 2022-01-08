@@ -1,13 +1,5 @@
 <?php
-// start the session
-session_start();
-if($_SESSION["logged_in"] != "true"){
-?>
-<script>
-    window.location.replace("login.php");
-</script>
-<?php
-}
+    require_once("userscript.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,13 +21,16 @@ if($_SESSION["logged_in"] != "true"){
         <article class="left">
 
             <?php
-
+                
+                $userId = $_SESSION["userId"];
+                
                 require_once("connect-db.php");
                 $error1 = "";
 
                 $sql = "select * from prepurchase WHERE userId = :userId";
             
                 $statement1 = $db->prepare($sql);
+                $statement1 -> bindValue(':userId' , $userId);
                 
             
                 if($statement1->execute()){

@@ -1,13 +1,5 @@
 <?php
-// start the session
-session_start();
-if($_SESSION["logged_in"] != "true"){
-?>
-<script>
-    window.location.replace("login.php");
-</script>
-<?php
-}
+    require_once("userscript.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,12 +43,12 @@ if($_SESSION["logged_in"] != "true"){
                 $statement1->bindValue(':qty', $qty);
                 $statement1->bindValue(':descr', $descr);
                
-                function test_input($data) {
-                      $data = trim($data);
-                      $data = stripslashes($data);
-                      $data = htmlspecialchars($data);
-                      return $data;
-                    }
+                // function test_input($data) {
+                //       $data = trim($data);
+                //       $data = stripslashes($data);
+                //       $data = htmlspecialchars($data);
+                //       return $data;
+                //     }
                 
                 if($statement1->execute()){
                     $statement1->closeCursor();

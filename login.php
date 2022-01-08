@@ -38,25 +38,29 @@ session_start();
                         $_SESSION["admin_login"] = "true";
                         $_SESSION["logged_in"] = "true";
                     ?>
-                <script type="text/javascript">
+                <!-- <script type="text/javascript">
                     window.location = "admin.php";
-                </script>
+                </script> -->
         <?php
                 }
                 if($username != 'ted'){
-                $sql = "select * from users where username = :username and password = :password";
+                $sql = "select * from users where username = :username";
             
                 $statement1=$db->prepare($sql);
                 
                 $statement1->bindValue(':username', $username);
                 $statement1->bindValue(':password', $password);
+                
 
-                if($statement1->execute()){
-                    $log = $statement1->fetchAll();
-                    $statement1->closeCursor();
-                    foreach ($log as $u):
-                        $_SESSION["logged_in"] = "true";
-                    endforeach;
+                if ($statement1->execute()){
+                    if (':password' == $password){
+                        $log = $statement1->fetchAll();
+                        $statement1->closeCursor();
+                        foreach ($log as $u):
+                            $_SESSION["user_Id"] = $userId;
+                        endforeach;
+                    }
+                    
         		?>
             <script type="text/javascript">
                 window.location.replace("admin.php");
