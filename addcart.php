@@ -58,8 +58,17 @@
                 
                 <?php    
                     foreach($customers as $c){?>
-                        <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
-                        <input type="text" name="userId" value="<?php echo $c["userId"];?>">
+                        SKU (Item Id)
+                        <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
+                        <br>
+                        User Id (Test)
+                        <input type="text" name="userId" value="<?php 
+                      
+                            require_once("userscript.php");
+                            echo $userId;
+                        
+                        ?>"><br>
+                        <br>
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
                         <br><br>
