@@ -57,7 +57,7 @@ session_start();
                         $log = $statement1->fetchAll();
                         $statement1->closeCursor();
                         foreach ($log as $u):
-                            $_SESSION["user_Id"] = $userId;
+                            $_SESSION["userId"] = $userId;
                         endforeach;
                     }
                     
