@@ -35,6 +35,7 @@ session_start();
                 $password = $_POST["password"];
                 
                 if($username == 'ted' && $password == 'ted'){
+                        $_SESSION["userId"] = $userId;
                         $_SESSION["admin_login"] = "true";
                         $_SESSION["logged_in"] = "true";
                     ?>
@@ -44,7 +45,7 @@ session_start();
         <?php
                 }
                 if($username != 'ted'){
-                $sql = "select * from users where username = :username";
+                $sql = "select * from users where username = :username and password = :password";
             
                 $statement1=$db->prepare($sql);
                 
@@ -53,13 +54,14 @@ session_start();
                 
 
                 if ($statement1->execute()){
-                    if (':password' == $password){
-                        $log = $statement1->fetchAll();
-                        $statement1->closeCursor();
-                        foreach ($log as $u):
-                            $_SESSION["userId"] = $userId;
-                        endforeach;
-                    }
+                    
+                    $log = $statement1->fetchAll();
+                    $statement1->closeCursor();
+                    foreach ($log as $u):
+                        $_SESSION["userId"] = $userId;
+                        $_SESSION["logged_in"] = "true";
+                    endforeach;
+                    
                     
         		?>
             <script type="text/javascript">
