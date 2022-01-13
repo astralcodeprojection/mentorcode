@@ -48,10 +48,10 @@
                  
                     <th>Menu Item</th>
                     <th>Price</th>
-                    <th>q</th>
+                    <th>qty</th>
+                    <th>user Id</th>
                     
                 
-                    <th></th>
                 </tr>
                
                 <?php
@@ -61,6 +61,7 @@
                     <td><?php echo $c["price"]." $";?></td>
                     
                     <td><?php echo $c["qty"];?></td>
+                    <td><?php echo $c["userId"];?></td>
                     
                     <td>
                         <form action="deletecartitem.php" method="post">

@@ -22,12 +22,12 @@
            
            <article>
             <?php
-
+            
             require_once("connect-db.php");
-            $error = $success = $itemId = $userId =$name = $price = $qty = $descr = "";
+            $error = $success = $itemId = $userId = $name = $price = $qty = $descr = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $itemId = $_POST["itemId"];
-                $userId = $_POST["userId"];
+                $userId = $_SESSION["userId"];
                 $name = $_POST["name"];
                 $price = $_POST["price"];
                 $qty = $_POST["qty"];

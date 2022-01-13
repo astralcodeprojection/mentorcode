@@ -61,9 +61,6 @@
                         SKU (Item Id)
                         <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
                         <br>
-                        User Id (Test)
-                        <input type="text" name="userId" value="<?php echo "{$_SESSION["userId"]}";?>"><br>
-                        <br>
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
                         <br><br>

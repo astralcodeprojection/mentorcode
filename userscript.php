@@ -10,7 +10,7 @@ if($_SESSION["logged_in"] != "true"){
 </script>
 <?php
 }
-else{
-    $_SESSION["userId"] = $userId;
-}
+// else{
+//     $_SESSION["userId"] = $userId;
+// }
 ?>
