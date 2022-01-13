@@ -1,5 +1,15 @@
 <?php
-    require_once("userscript.php");
+// start the session
+session_start();
+
+if($_SESSION["logged_in"] != "true"){
+    
+?>
+<script>
+    window.location.replace("login.php");
+</script>
+<?php
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,10 +34,11 @@
             <?php
             
             require_once("connect-db.php");
+            
             $error = $success = $itemId = $userId = $name = $price = $qty = $descr = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $itemId = $_POST["itemId"];
-                $userId = $_SESSION["userId"];
+                $userId = $_POST["userId"];
                 $name = $_POST["name"];
                 $price = $_POST["price"];
                 $qty = $_POST["qty"];

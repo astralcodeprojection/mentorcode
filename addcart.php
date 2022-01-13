@@ -28,7 +28,7 @@
                 <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $itemId = $_POST["itemId"];
-                    
+                    $userId = $_SESSION["userId"];
 
 
                     require_once("connect-db.php");
