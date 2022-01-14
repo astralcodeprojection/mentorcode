@@ -54,10 +54,11 @@
                     };
                  }
                 ?>
-
+                
                 
                 <?php    
                     foreach($customers as $c){?>
+                        
                         SKU (Item Id)
                         <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
                         <br>

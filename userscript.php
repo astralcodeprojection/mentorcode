@@ -11,6 +11,10 @@ if($_SESSION["logged_in"] != "true"){
 <?php
 }
 else{
+    
     $_SESSION["userId"] = $userId;
+    
 }
 ?>
+Test User Id Echo (session): <?php echo $_SESSION["userId"];?><br><br>
+Test User Id Echo: <?php echo $userId;?><br><br>
