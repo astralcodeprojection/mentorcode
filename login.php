@@ -35,13 +35,13 @@ session_start();
                 $password = $_POST["password"];
                 
                 if($username == 'ted' && $password == 'ted'){
-                        $_SESSION["userId"] = $userId;
+                        $userId = $_SESSION["userId"];
                         $_SESSION["admin_login"] = "true";
                         $_SESSION["logged_in"] = "true";
                     ?>
-                <!-- <script type="text/javascript">
+                <script type="text/javascript">
                     window.location = "admin.php";
-                </script> -->
+                </script>
         <?php
                 }
                 if($username != 'ted'){
@@ -65,7 +65,7 @@ session_start();
                     
         		?>
             <script type="text/javascript">
-                window.location.replace("admin.php");
+                window.location.replace("olo.php");
             </script>
             <?php
                 }
