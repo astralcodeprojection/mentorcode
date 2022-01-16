@@ -1,6 +1,23 @@
 <?php
-    require_once("userscript.php");
+// start the session
+session_start();
+echo $_SESSION["userId"];
+if($_SESSION["userId"] = $u["userId"]){
+    
 ?>
+<script>
+    window.location.replace("login.php");
+</script>
+<?php
+}
+else{
+    
+    $_SESSION["userId"] = $userId;
+    
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +45,6 @@
                 <?php
                 if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $itemId = $_POST["itemId"];
-                    $userId = $_SESSION["userId"];
 
 
                     require_once("connect-db.php");

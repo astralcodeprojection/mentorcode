@@ -1,8 +1,8 @@
 <?php
 // start the session
 session_start();
-
-if($_SESSION["logged_in"] != "true"){
+echo $_SESSION["userId"];
+if($_SESSION["userId"] = $u["userId"]){
     
 ?>
 <script>
@@ -16,5 +16,4 @@ else{
     
 }
 ?>
-Test User Id Echo (session): <?php echo $_SESSION["userId"];?><br><br>
-Test User Id Echo: <?php echo $userId;?><br><br>
+

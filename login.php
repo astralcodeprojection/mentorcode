@@ -46,7 +46,7 @@ session_start();
                 }
                 if($username != 'ted'){
                 $sql = "select * from users where username = :username and password = :password";
-            
+                    
                 $statement1=$db->prepare($sql);
                 
                 $statement1->bindValue(':username', $username);
@@ -57,17 +57,25 @@ session_start();
                     
                     $log = $statement1->fetchAll();
                     $statement1->closeCursor();
-                    foreach ($log as $u):
-                        $_SESSION["userId"] = $userId;
-                        $_SESSION["logged_in"] = "true";
-                    endforeach;
+                    foreach ($log as $u){
+                        print_r($u);
+                        echo $u["userId"];
+                        $_SESSION["userId"] = $u["userId"];
+                        if($username == ':password' && $password == ':password'){
+                            $_SESSION["logged_in"] = "true";
+                        }
+                        
+                        
+                    
                     
                     
         		?>
             <script type="text/javascript">
-                window.location.replace("olo.php");
+               // window.location.replace("olo.php");
             </script>
             <?php
+                    }
+                
                 }
                 }else{
                     $error = "Invalid username or password.";
