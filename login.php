@@ -51,7 +51,7 @@ session_start();
                 
                 $statement1->bindValue(':username', $username);
                 $statement1->bindValue(':password', $password);
-                
+                 
 
                 if ($statement1->execute()){
                     
@@ -61,11 +61,11 @@ session_start();
                         print_r($u);
                         echo $u["userId"];
                         $_SESSION["userId"] = $u["userId"];
-                        if($username == ':password' && $password == ':password'){
+                        if($u["username"] == $username && $u["password"] == $password){
                             $_SESSION["logged_in"] = "true";
                         }
                         
-                        
+                        print_r($_SESSION["logged_in"]);
                     
                     
                     

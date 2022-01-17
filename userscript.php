@@ -2,7 +2,8 @@
 // start the session
 session_start();
 echo $_SESSION["userId"];
-if($_SESSION["userId"] = $u["userId"]){
+echo $_SESSION["logged_in"];
+if($_SESSION["logged_in"] != "true"){
     
 ?>
 <script>
@@ -10,10 +11,6 @@ if($_SESSION["userId"] = $u["userId"]){
 </script>
 <?php
 }
-else{
-    
-    $_SESSION["userId"] = $userId;
-    
-}
+
 ?>
 

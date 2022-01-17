@@ -1,20 +1,5 @@
 <?php
-// start the session
-session_start();
-echo $_SESSION["userId"];
-if($_SESSION["userId"] = $u["userId"]){
-    
-?>
-<script>
-    window.location.replace("login.php");
-</script>
-<?php
-}
-else{
-    
-    $_SESSION["userId"] = $userId;
-    
-}
+    require_once("userscript.php");
 ?>
 
 
@@ -77,6 +62,9 @@ else{
                         
                         SKU (Item Id)
                         <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
+                        <br>
+                        User Id (You)
+                        <input type="text" name="userId" value="<?php echo $_SESSION["userId"];?>"><br>
                         <br>
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
