@@ -20,13 +20,14 @@
        <?php include("nav.html");?>
         <article>
            <?php
-
+                $userId = $_SESSION["userId"];
                 require_once("connect-db.php");
                 $error1 = "";
 
-                $sql = "select * from prepurchase";
+                $sql = "select * from prepurchase WHERE userId = :userId";
             
                 $statement1 = $db->prepare($sql);
+                $statement1 -> bindValue(':userId' , $userId);
                 
             
                 if($statement1->execute()){
@@ -45,7 +46,7 @@
                     <th>Menu Item</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    
+                    <th>User</th>
                 
                      
                 </tr>
@@ -54,7 +55,7 @@
                     foreach($customers as $c){?>
                 <tr>
                     <td name="name"><?php echo $c["name"];?></td>
-                    <td name="price"><?php echo $c["price"]." $";?></td>
+                    <td name="price"><?php echo $c["total"]." $";?></td>
                     
                     <td name="qty"><?php echo $c["qty"];?></td>
                     <td name="userId"><?php echo $c["userId"];?></td>

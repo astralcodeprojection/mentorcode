@@ -22,23 +22,25 @@
             <?php
 
             require_once("connect-db.php");
-            $error = $success = $name = $price = $fname = $lname = $addr = $state = $paymethod = "";
+            $error = $success = $name = $total = $fname = $userId = $lname = $addr = $state = $paymethod = "";
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 $name = $_POST["name"];
-                $price = $_POST["price"];
+                $price = $_POST["total"];
+                $userId = $_POST["userId"];
                 $fname = $_POST["fname"];
                 $lname = $_POST["lname"];
                 $addr = $_POST["addr"];
                 $state = $_POST["state"];
                 $paymethod = $_POST["paymethod"];
                 
-             $sql = "insert into orders (name, price, fname, lname, addr, state, paymethod) VALUES (:name, :price, :fname, :lname, :addr, :state, :paymethod)";
+             $sql = "insert into orders (name, total, userId, fname, lname, addr, state, paymethod) VALUES (:name, :total, :userId, :fname, :lname, :addr, :state, :paymethod)";
                 
                 $statement1 = $db->prepare($sql);
                 
                 $statement1->bindValue(':name', $name);
-                $statement1->bindValue(':price', $price);
+                $statement1->bindValue(':total', $price);
+                $statement1->bindValue(':userId', $userId);
                 $statement1->bindValue(':fname', $fname);
                 $statement1->bindValue(':lname', $lname);
                 $statement1->bindValue(':addr', $addr);
