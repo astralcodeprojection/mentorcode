@@ -52,10 +52,13 @@
                 </tr>
                
                 <?php
-                    foreach($customers as $c){?>
+                    foreach($customers as $c){
+                        $total = $total + ($c["price"]*$c["qty"]);
+                        ?>
                 <tr>
+                    
                     <td name="name"><?php echo $c["name"];?></td>
-                    <td name="price"><?php echo $c["total"]." $";?></td>
+                    <td name="price"><?php echo $c["price"]." $";?></td>
                     
                     <td name="qty"><?php echo $c["qty"];?></td>
                     <td name="userId"><?php echo $c["userId"];?></td>
@@ -76,6 +79,9 @@
                         <br><br>
                         State:
                         <input type="text" name="state" required>
+                        <br><br>
+                        Total:
+                        <input type="text" name="total" value=<?php echo $total;?> required>
                         <br><br>
                         Payment:
                         <input type="radio" name="paymethod" value="Debit Card">Debit Card
