@@ -1,4 +1,5 @@
 <?php
+session_start();
     require_once("userscript.php");
 ?>
 <!DOCTYPE html>
@@ -26,19 +27,21 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 
                 $name = $_POST["name"];
+    
+                
                 $price = $_POST["total"];
-                $userId = $_POST["userId"];
+                $userId = $_SESSION["userId"];
                 $fname = $_POST["fname"];
                 $lname = $_POST["lname"];
                 $addr = $_POST["addr"];
                 $state = $_POST["state"];
                 $paymethod = $_POST["paymethod"];
                 
-             $sql = "insert into orders (name, total, userId, fname, lname, addr, state, paymethod) VALUES (:name, :total, :userId, :fname, :lname, :addr, :state, :paymethod)";
+             $sql = "insert into orders ( total, userId, fname, lname, addr, state, paymethod) VALUES (:total, :userId, :fname, :lname, :addr, :state, :paymethod)";
                 
                 $statement1 = $db->prepare($sql);
                 
-                $statement1->bindValue(':name', $name);
+                // $statement1->bindValue(':name', $name);
                 $statement1->bindValue(':total', $price);
                 $statement1->bindValue(':userId', $userId);
                 $statement1->bindValue(':fname', $fname);
@@ -46,7 +49,7 @@
                 $statement1->bindValue(':addr', $addr);
                 $statement1->bindValue(':state', $state);
                 $statement1->bindValue(':paymethod', $paymethod);
-                
+                // echo $statement1;
                 function test_input($data) {
                       $data = trim($data);
                       $data = stripslashes($data);
@@ -57,6 +60,8 @@
                 if($statement1->execute()){
                     $statement1->closeCursor();
                     $success = "Order Placed!";
+                    $sql ="delete * from prepurchase where userId=".$userId;
+
                  }else{
                     $error="Error entering request.";
                 };

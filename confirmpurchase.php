@@ -39,7 +39,9 @@
             
                
             ?>
-           <h3>Cart Contents</h3>
+          
+            <form action="pscv.php" method="post">
+                 <h3>Cart Contents</h3>
             <table>
                 <tr>
                  
@@ -92,11 +94,11 @@
            
            
           <div>
-                        <form action="pscv.php" method="post">
                         
                         <button type="submit">Place Order</button>
-                        </form>
+                        
               </div>
+              </form>
         </article>
         <?php include("navfooter.php");?>
 
