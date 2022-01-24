@@ -59,8 +59,11 @@ session_start();
                     $statement1->closeCursor();
                     foreach ($log as $u){
                         print_r($u);
-                        echo $u["userId"];
-                        $_SESSION["userId"] = $u["userId"];
+                        $_SESSION[$u];
+                        echo $_SESSION[$u];
+                        // (also attempted - >) $_SESSION[$log] = $u;
+                        //echo $u["userId"];
+                        //$_SESSION["userId"] = $u["userId"];
                         if($u["username"] == $username && $u["password"] == $password){
                             $_SESSION["logged_in"] = "true";
                         }

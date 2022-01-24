@@ -60,7 +60,18 @@ session_start();
                 if($statement1->execute()){
                     $statement1->closeCursor();
                     $success = "Order Placed!";
-                    $sql ="delete * from prepurchase where userId=".$userId;
+
+                    $cartClear ="delete * from prepurchase WHERE userId = :userId";
+
+                    $statement2 = $db->prepare($cartClear);
+
+                    $statement2->bindValue(':userId', $userId);
+
+                    if($statement2->execute()){
+                        echo "Cart Cleared - Test Passed";
+                    }else{
+                        echo "Cart test failed";
+                    }
 
                  }else{
                     $error="Error entering request.";
