@@ -71,16 +71,16 @@
                 <?php } ?>
             </table>  
                 <br><br><br>First Name:
-                        <input type="text" name="fname" required>
+                        <input type="text" name="fname" value=<?php echo $_SESSION["fname"];?> required>
                         <br><br>
                         Last Name:
-                        <input type="text" name="lname" required>
+                        <input type="text" name="lname" value=<?php echo $_SESSION["lname"];?> required>
                         <br><br>
                         Address:
-                        <input type="text" name="addr" required>
+                        <input type="text" name="addr" value=<?php echo $_SESSION["addr"];?> required>
                         <br><br>
                         State:
-                        <input type="text" name="state" required>
+                        <input type="text" name="state" value=<?php echo $_SESSION["state"];?> required>
                         <br><br>
                         Total:
                         <input type="text" name="total" value=<?php echo $total;?> required>

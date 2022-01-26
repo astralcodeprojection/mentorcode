@@ -59,7 +59,7 @@ session_start();
                     $statement1->closeCursor();
                     foreach ($log as $u){
                         print_r($u);
-                        $_SESSION[$u];
+                        $_SESSION["$u"] = $u;
                         echo $_SESSION[$u];
                         // (also attempted - >) $_SESSION[$log] = $u;
                         //echo $u["userId"];
