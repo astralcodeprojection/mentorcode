@@ -57,10 +57,14 @@ session_start();
                     
                     $log = $statement1->fetchAll();
                     $statement1->closeCursor();
-                    foreach ($log as $u){
-                        print_r($u);
-                        $_SESSION["$u"] = $u;
-                        echo $_SESSION[$u];
+                    foreach ($log as $u=>$value){
+                        print_r($value);
+                        if(is_string($u)) {
+                            $_SESSION[$u] = $value;
+                        }
+                        echo $_SESSION['fname'];
+                        //$_SESSION["$u"] = $u;
+                        //echo $_SESSION[$u];
                         // (also attempted - >) $_SESSION[$log] = $u;
                         //echo $u["userId"];
                         //$_SESSION["userId"] = $u["userId"];
