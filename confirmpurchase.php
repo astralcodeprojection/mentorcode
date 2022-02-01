@@ -1,5 +1,11 @@
 <?php
+<<<<<<< HEAD
     require_once("userscript.php");
+=======
+    session_start();
+    require_once("userscript.php");
+    print_r($_SESSION);
+>>>>>>> 4068b3e... Initializing and working with sass / scss
 ?>
 <!DOCTYPE html>
 <html>
