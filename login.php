@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ted's Tasty Taco Truck</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
@@ -58,28 +58,44 @@ session_start();
                     $log = $statement1->fetchAll();
                     $statement1->closeCursor();
 
+<<<<<<< HEAD
                     
            
 
                     foreach ($log as $u=>$value){
                         print_r($value);
                             foreach($log as $u => $value){
+=======
+                    foreach ($log as $u=>$value){
+                        print_r($value);
+                        foreach($log as $u => $value){
+>>>>>>> main
                                 foreach($value as $x => $v){
                                     if(is_string($v)) {
                                     
                                     $_SESSION[$x] = $v;
                                     // $_SESSION["logged_in"] = "true";
                                     //$_SESSION["$u"] = $value;
+<<<<<<< HEAD
                                     }
+=======
+                                }
+>>>>>>> main
                                 
                                 if($v == $username && $v == $password){
                                     $_SESSION["logged_in"] = "true";
                                 }
                             }
+<<<<<<< HEAD
                          }
                 
                
 
+=======
+                        }
+                
+               
+>>>>>>> main
                     
                     
                     

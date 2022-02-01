@@ -2,6 +2,9 @@
 
     session_start();
     require_once("userscript.php");
+    
+    session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
