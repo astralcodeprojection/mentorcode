@@ -58,44 +58,24 @@ session_start();
                     $log = $statement1->fetchAll();
                     $statement1->closeCursor();
 
-<<<<<<< HEAD
-                    
-           
-
-                    foreach ($log as $u=>$value){
-                        print_r($value);
-                            foreach($log as $u => $value){
-=======
                     foreach ($log as $u=>$value){
                         print_r($value);
                         foreach($log as $u => $value){
->>>>>>> main
                                 foreach($value as $x => $v){
                                     if(is_string($v)) {
                                     
                                     $_SESSION[$x] = $v;
                                     // $_SESSION["logged_in"] = "true";
                                     //$_SESSION["$u"] = $value;
-<<<<<<< HEAD
-                                    }
-=======
                                 }
->>>>>>> main
                                 
                                 if($v == $username && $v == $password){
                                     $_SESSION["logged_in"] = "true";
                                 }
                             }
-<<<<<<< HEAD
-                         }
-                
-               
-
-=======
                         }
                 
                
->>>>>>> main
                     
                     
                     
