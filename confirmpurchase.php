@@ -1,11 +1,7 @@
 <?php
-<<<<<<< HEAD
-    require_once("userscript.php");
-=======
+
     session_start();
     require_once("userscript.php");
-    print_r($_SESSION);
->>>>>>> 4068b3e... Initializing and working with sass / scss
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ted's Tasty Taco Truck</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>

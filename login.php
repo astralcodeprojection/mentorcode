@@ -57,46 +57,29 @@ session_start();
                     
                     $log = $statement1->fetchAll();
                     $statement1->closeCursor();
-<<<<<<< HEAD
+
+                    
+           
+
                     foreach ($log as $u=>$value){
                         print_r($value);
-=======
-                    foreach($log as $u => $value){
-                        foreach($value as $x => $v){
-                            if(is_string($v)) {
-                               
-                            $_SESSION[$x] = $v;
-                            // $_SESSION["logged_in"] = "true";
-                            //$_SESSION["$u"] = $value;
-                        }
-                        
-                        if($v == $username && $v == $password){
-                            $_SESSION["logged_in"] = "true";
-                        }
-                        }
-                    }
-                    foreach ($log as $u=>$value){
-                    //    print_r($value);
->>>>>>> 4068b3e... Initializing and working with sass / scss
-                        if(is_string($value)) {
-                            $_SESSION[$u] = $value;
-                            //$_SESSION["$u"] = $value;
-                        }
-                        echo $_SESSION['fname'];
-                        //$_SESSION["$u"] = $u;
-                        //echo $_SESSION[$u];
-                        //$_SESSION[$log] = $u;
-                        //echo $u["userId"];
-                        //$_SESSION["userId"] = $u["userId"];
-<<<<<<< HEAD
-                        if($u["username"] == $username && $u["password"] == $password){
-                            $_SESSION["logged_in"] = "true";
-                        }
-=======
-                        
->>>>>>> 4068b3e... Initializing and working with sass / scss
-                        
-                        print_r($_SESSION["logged_in"]);
+                            foreach($log as $u => $value){
+                                foreach($value as $x => $v){
+                                    if(is_string($v)) {
+                                    
+                                    $_SESSION[$x] = $v;
+                                    // $_SESSION["logged_in"] = "true";
+                                    //$_SESSION["$u"] = $value;
+                                    }
+                                
+                                if($v == $username && $v == $password){
+                                    $_SESSION["logged_in"] = "true";
+                                }
+                            }
+                         }
+                
+               
+
                     
                     
                     
