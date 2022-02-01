@@ -1,0 +1,6 @@
+@use 'custom' as *;
+
+body {
+    font-family: Helvetica, sans-serif, Serif;
+    //@error: $primary;
+}
