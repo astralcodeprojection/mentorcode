@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Ted's Tasty Taco Truck</title>
     <link href="https://fonts.googleapis.com/css?family=Itim|Lilita+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
 <body>
