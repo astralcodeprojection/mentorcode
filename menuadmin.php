@@ -10,12 +10,21 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Ted's Tasty Taco Truck</h1>
-        </header>
-       <?php include("navadmin.html");?>
-        <article>
+    
+<?php include("nav.html");?>
+<div class="container">
+    <div class="row text-center">
+        
+      <h1 class="display-3 fw-bold">Hola</h1>
+      <div class="heading-line mb-1"></div>
+    </div>
+        <br><br>
+
+  <!-- START THE DESCRIPTION CONTENT  -->
+   
+      <div class="row">
+        <div class="col-md-6">
+            <article>
             <?php
 
             require_once("connect-db.php");
@@ -67,9 +76,18 @@
 
             
         </article>
-        <?php include("navfooter.php");?>
-
-    </div>
+        </div>
+        <div class="col-md-6">
+            <div class="bg-white p-4 text-start">
+            <p class="fw-light">
+                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
+            </p>
+            </div>
+        </div>
+      </div>
+  </div>
+      <?php include("navfooter.php");?>
 </body>
+
 
 </html>

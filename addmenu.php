@@ -14,7 +14,7 @@
 
 <body>
     
-            
+<?php include("nav.html");?>
 <div class="container">
     <div class="row text-center">
         
