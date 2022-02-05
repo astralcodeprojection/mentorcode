@@ -11,12 +11,13 @@
 
 <body>
     <?php include("nav.html");?>
-            
-<div class="container">
-    <div class="row text-center">
-        
-      <h1 class="display-3 fw-bold">Hola</h1>
-      <div class="heading-line mb-1"></div>
+
+<section id="home" class="intro-section">
+  <div class="container">
+      <div class="row text-center">
+          
+        <h1 class="display-3 fw-bold">Hola</h1>
+        <div class="heading-line mb-1"></div>
     </div>
         <br><br>
 
@@ -45,6 +46,7 @@
         </div>
       </div>
   </div>
+</section>
       <?php include("navfooter.php");?>
 
 </body>

@@ -28,7 +28,7 @@ if($_SESSION["logged_in"] != "true"){
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold"></h1>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
@@ -36,7 +36,7 @@ if($_SESSION["logged_in"] != "true"){
   <!-- START THE DESCRIPTION CONTENT  -->
    
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <article>
             <?php
             
@@ -89,13 +89,7 @@ if($_SESSION["logged_in"] != "true"){
 
         </article>
         </div>
-        <div class="col-md-6">
-            <div class="bg-white p-4 text-start">
-            <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
-            </p>
-            </div>
-        </div>
+       
       </div>
   </div>
       <?php include("navfooter.php");?>

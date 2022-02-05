@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold">Cart</h1>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>

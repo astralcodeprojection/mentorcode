@@ -18,7 +18,7 @@ session_start();
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold">Login</h1><br><br><br>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
@@ -110,12 +110,13 @@ session_start();
         <div class="col-md-6">
             <div class="bg-white p-4 text-start">
             <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
+                This page logs in and creates session variables that are used throughout the site.
             </p>
             </div>
         </div>
       </div>
   </div>
+    <br><br><br>  <br><br><br>  <br><br><br>  <br><br>
       <?php include("navfooter.php");?>
 </body>
 

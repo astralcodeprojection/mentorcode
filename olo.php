@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold">Order for Delivery</h1>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
@@ -26,7 +26,7 @@
   <!-- START THE DESCRIPTION CONTENT  -->
    
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <article class="left">
 
             <?php
@@ -75,16 +75,17 @@
                     </td>
                     
                 </tr>
+                
                 <?php } ?>
             </table>                 
             <br><br><br>
            
         </article>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="bg-white p-4 text-start">
             <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
+                This is an extremely meta description for a online website that processess data in place of what should of, and potentially could have been great site art.
             </p>
             </div>
         </div>

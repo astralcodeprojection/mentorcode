@@ -15,18 +15,21 @@
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold">Menu</h1>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
 
   <!-- START THE DESCRIPTION CONTENT  -->
-   
+      
       <div class="row">
-        <div class="col-md-6">
-            <article class="left">
+          <div class="col-md-3">
             
-            <h2>Menu</h2>
+        </div>
+        <div class="col-md-6">
+            <article>
+            
+            
             <br>
             <img class="qs" src="img/cq.jpg">
             <h3>Cheese Quesadilla - 7$</h3>
@@ -62,12 +65,8 @@
             
         </article>
         </div>
-        <div class="col-md-6">
-            <div class="bg-white p-4 text-start">
-            <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
-            </p>
-            </div>
+        <div class="col-md-3">
+            
         </div>
       </div>
   </div>

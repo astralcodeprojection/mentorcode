@@ -15,7 +15,7 @@
 <div class="container">
     <div class="row text-center">
         
-      <h1 class="display-3 fw-bold">Hola</h1>
+      <h1 class="display-3 fw-bold">Account Creator</h1>
       <div class="heading-line mb-1"></div>
     </div>
         <br><br>
@@ -112,7 +112,7 @@
         <div class="col-md-6">
             <div class="bg-white p-4 text-start">
             <p class="fw-light">
-                a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post a 6 column text post 
+                Sign up for the ability to order online and get tacos at your doorstep!
             </p>
             </div>
         </div>
