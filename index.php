@@ -12,7 +12,7 @@
 <body>
     <?php include("nav.html");?>
 
-<section id="home" class="intro-section">
+<section id="home" class="mainPage">
   <div class="container">
       <div class="row text-center">
           
@@ -24,7 +24,7 @@
   <!-- START THE DESCRIPTION CONTENT  -->
     <div class="row">
       <div class="col-md-10">
-            <img class="" src="img/maxresdefault.jpg">
+            <img class="picture" src="img/maxresdefault.jpg">
       </div>
     </div>
       <div class="row">
