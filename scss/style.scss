@@ -1,3 +1,5 @@
-//@use 'custom' as *;
+//@use 'custom';
 
-@use 'mainPage.scss';
+@use 'sections/footer';
+@use 'sections/mainPage';
+@use 'sections/navbar';
