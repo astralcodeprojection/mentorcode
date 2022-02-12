@@ -49,25 +49,26 @@
                
             ?>
            <h3>Menu Items</h3>
-
+            <div class="cardComponent">
            <?php
                 foreach($customers as $c){?>
-                    <div class="contentCard">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $c["name"];?></h5>
-                                <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
-                                <p class="card-text"><?php echo $c["descr"];?></p>
-                                <form action="addcart.php" method="post">
-                                    <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
-                                    <button class="btn btn-primary" type="submit">Add to Cart</button>
-                                </form>
+                    
+                            <div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $c["name"];?></h5>
+                                    <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
+                                    <p class="card-text"><?php echo $c["descr"];?></p>
+                                    <form action="addcart.php" method="post">
+                                        <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
+                                        <button class="btn btn-primary" type="submit">Add to Cart</button>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    </diu>
+                    
                     
             <?php } ?>
-                   
+            </diu>
             <br><br><br>
            
         </article>

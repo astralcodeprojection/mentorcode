@@ -1,10 +1,16 @@
 @use "../custom" as *;
 
-.card {
+.cardComponent {
+    flex-direction: row;
     display: flex;
     flex-wrap: wrap;
 }
 
-.card>* {
+.cardComponent {
     flex: 1 1 160px;
+    margin: 10px;
+}
+
+.card {
+    border-radius: 5px;
 }
