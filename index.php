@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="" >
     <?php include("nav.html");?>
 
 <section id="home" class="mainPage">

@@ -46,7 +46,7 @@ session_start();
                 $state = $_POST["state"];
                 $paymethod = $_POST["paymethod"];
                 
-             $sql = "insert into orders ( total, userId, fname, lname, addr, state, paymethod) VALUES (:total, :userId, :fname, :lname, :addr, :state, :paymethod)";
+                $sql = "insert into orders ( total, userId, fname, lname, addr, state, paymethod) VALUES (:total, :userId, :fname, :lname, :addr, :state, :paymethod)";
                 
                 $statement1 = $db->prepare($sql);
                 
@@ -69,22 +69,13 @@ session_start();
                 if($statement1->execute()){
                     $statement1->closeCursor();
                     $success = "Order Placed!";
-
-                    $cartClear ="delete * from prepurchase WHERE userId = :userId";
-
-                    $statement2 = $db->prepare($cartClear);
-
-                    $statement2->bindValue(':userId', $userId);
-
-                    if($statement2->execute()){
-                        echo "Cart Cleared - Test Passed";
-                    }else{
-                        echo "Cart test failed";
-                    }
+                    
 
                  }else{
                     $error="Error entering request.";
                 };
+
+                
 
         
         ?>
@@ -97,6 +88,32 @@ session_start();
                 
         }//end of post
                 ?>
+
+        <?php
+                if($_SERVER["REQUEST_METHOD"] == "POST"){
+                    $user = $_SESSION["userId"];
+                    
+                    require_once("connect-db.php");
+                    $sql2 = "delete from prepurchase where userId = $user";
+                    
+                    $statement2=$db->prepare($sql2);
+                    
+                    if($statement2->execute()){
+                        $statement2->closeCursor();
+                        $success = "Successfully deleted items.";
+                    }else{                  
+                        $error = "Error deleting purchased items";
+                    }
+                }
+            ?>
+            
+            <?php
+                if($error != ""){
+                    echo $error;
+                }else{
+                    echo $success;
+                }
+            ?>
 
         </article>
         </div>

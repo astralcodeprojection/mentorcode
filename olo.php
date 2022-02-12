@@ -26,7 +26,7 @@
   <!-- START THE DESCRIPTION CONTENT  -->
    
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-12">
             <article class="left">
 
             <?php
@@ -49,46 +49,30 @@
                
             ?>
            <h3>Menu Items</h3>
-            <table>
-                <tr>
-                 
-                    <th>Menu Item</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                
-                    <th></th>
-                </tr>
-               
-                <?php
-                    foreach($customers as $c){?>
-                <tr>
-                    <td><?php echo $c["name"];?></td>
-                    <td><?php echo $c["price"]." $";?></td>
+
+           <?php
+                foreach($customers as $c){?>
+                    <div class="contentCard">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $c["name"];?></h5>
+                                <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
+                                <p class="card-text"><?php echo $c["descr"];?></p>
+                                <form action="addcart.php" method="post">
+                                    <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
+                                    <button class="btn btn-primary" type="submit">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    </diu>
                     
-                    <td><?php echo $c["descr"];?></td>
-                    
-                    <td>
-                        <form action="addcart.php" method="post">
-                            <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
-                            <button type="submit">More Details</button>
-                        </form>
-                    </td>
-                    
-                </tr>
-                
-                <?php } ?>
-            </table>                 
+            <?php } ?>
+                   
             <br><br><br>
            
         </article>
         </div>
-        <div class="col-md-5">
-            <div class="bg-white p-4 text-start">
-            <p class="fw-light">
-                This is an extremely meta description for a online website that processess data in place of what should of, and potentially could have been great site art.
-            </p>
-            </div>
-        </div>
+       
       </div>
   </div>
       <?php include("navfooter.php");?>

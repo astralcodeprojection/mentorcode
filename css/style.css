@@ -11118,6 +11118,15 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card > * {
+  flex: 1 1 160px;
+}
+
 .mainPage {
   padding: 10rem 0 0 0;
   width: 100%;
@@ -11125,8 +11134,7 @@ textarea.form-control-lg {
 }
 
 .picture {
-  border: 45px;
-  border-color: black;
+  border: 10px solid black;
 }
 
 /*# sourceMappingURL=style.css.map */

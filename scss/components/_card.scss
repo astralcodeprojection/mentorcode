@@ -1,0 +1,10 @@
+@use "../custom" as *;
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card>* {
+    flex: 1 1 160px;
+}

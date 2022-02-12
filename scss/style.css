@@ -1,4 +1,5 @@
 @use 'sections/footer';
 @use 'sections/mainPage';
 @use 'sections/navbar';
+@use 'components/card';
 /*# sourceMappingURL=style.css.map */
