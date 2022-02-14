@@ -48,13 +48,13 @@
             
                
             ?>
-           <h3>Menu Items</h3>
+           <h2 >Menu Items</h2><br>
             <div class="cardComponent">
            <?php
                 foreach($customers as $c){?>
                     
                             <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
+                                <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $c["name"];?></h5>
                                     <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
@@ -68,7 +68,7 @@
                     
                     
             <?php } ?>
-            </diu>
+            </div>
             <br><br><br>
            
         </article>

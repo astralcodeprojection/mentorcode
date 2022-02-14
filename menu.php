@@ -52,16 +52,7 @@
             <p>A pair of beef tacos topped with lettuce and cheese.</p>
             <h3>Steak Tacos - 8$</h3>
             <p>A pair of steak tacos topped with lettuce and cheese.</p><br>
-            <img class="fln" src="img/dulce-de-leche-flan-2a.jpg">
-            <h3>Flan - 3$</h3>
-            <p>Traditional tapioca dessert suitable for any occasion</p>
-            <h3>Pan Dulce - 4$</h3>
-            <p>A pastry type sweet that is filled with fruit filling</p>
-            <h3>Cafecito - 2$</h3>
-            <p>A shot of sweetened espresso served out of a traditional cafetera</p>
-            <h3>Cafe con Leche - 3$</h3>
-            <p>Espresso served in milk that is perfect for enjoying a early morning</p>
-
+            
             
         </article>
         </div>
