@@ -1,5 +1,6 @@
 <?php
     require_once("userscript.php");
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,9 +33,12 @@
             <?php
 
                 require_once("connect-db.php");
+                if (isset($_GET["page"])) { $page  = $_GET["page"]; } 
+                else { $page=1; };
+                 $start_from = ($page-1) * $results_per_page;
+                $sql = "SELECT * FROM menuitems ORDER BY ID ASC LIMIT $start_from, ".$results_per_page;
                 $error1 = "";
 
-                $sql = "select * from menuitems";
             
                 $statement1 = $db->prepare($sql);
                 
@@ -52,6 +56,7 @@
             <div class="cardComponent">
            <?php
                 foreach($customers as $c){?>
+                  <!-- //foreach($customers as $c->fetch_assoc()){?>  -->
                     
                             <div class="card" style="width: 18rem;">
                                 <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
