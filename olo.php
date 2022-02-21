@@ -36,9 +36,8 @@
                 if (isset($_GET["page"])) { $page  = $_GET["page"]; } 
                 else { $page=1; };
                  $start_from = ($page-1) * $results_per_page;
-                $sql = "SELECT * FROM menuitems ORDER BY ID ASC LIMIT $start_from, $results_per_page LIMIT $start_from, ".$results_per_page;
+                $sql = "SELECT * FROM menuitems ORDER BY itemId ASC LIMIT $start_from, $results_per_page";
                 $error1 = "";
-
             
                 $statement1 = $db->prepare($sql);
                 
@@ -78,6 +77,13 @@
            
         </article>
         </div>
+
+	
+        <?php
+            for ($i=1; $i<=$total_pages; $i++) {
+                echo "<a href='olo.php?page=".$i."'>".$i."</a> ";
+            };
+        ?>
        
       </div>
   </div>
