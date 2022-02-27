@@ -45,6 +45,7 @@
                 if($statement1->execute()){
                     $customers = $statement1->fetchAll();
                     $statement1->closeCursor();
+                    
                 }else{
                     $error1= "Error finding items.";
                 }
@@ -74,16 +75,26 @@
             <?php } ?>
             </div>
             <br><br><br>
-           
+           <?php
+            //require_once("connect-db.php");
+            $sql3 = "SELECT COUNT(itemId) AS total FROM menuitems";
+            $result = $db->query($sql3);
+            $row = $result->fetch_assoc();
+            $total_pages = ceil($row["total"] / $results_per_page);
+            echo $total_pages;
+
+            for ($i=1; $i<=$total_pages; $i++) {
+            echo "<a href='olo.php?page=".$i."'";
+            if ($i==$page)  echo " class='curPage'";
+            echo ">".$i."</a> ";
+}; 
+            
+        ?>
         </article>
         </div>
 
 	
-        <?php
-            for ($i=1; $i<=$total_pages; $i++) {
-                echo "<a href='olo.php?page=".$i."'>".$i."</a> ";
-            };
-        ?>
+        
        
       </div>
   </div>
