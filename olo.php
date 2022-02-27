@@ -76,18 +76,33 @@
             </div>
             <br><br><br>
            <?php
-            //require_once("connect-db.php");
-            $sql3 = "SELECT COUNT(itemId) AS total FROM menuitems";
-            $result = $db->query($sql3);
-            $row = $result->fetch_assoc();
+            require_once("connect-db.php");
+            $sql3 = "SELECT COUNT(itemId) AS total FROM menuitems";            
+            $error3 = "";
+            
+            $statement3 = $db->prepare($sql3);
+                
+            
+            if($statement3->execute()){
+                $pagenation = $statement3->fetchAll();
+                
+                $statement3->closeCursor();
+                    
+            }else{
+                $error3= "Error Loading.";
+            }
+
+            
+           
+            
             $total_pages = ceil($row["total"] / $results_per_page);
             echo $total_pages;
 
-            for ($i=1; $i<=$total_pages; $i++) {
-            echo "<a href='olo.php?page=".$i."'";
-            if ($i==$page)  echo " class='curPage'";
-            echo ">".$i."</a> ";
-}; 
+            for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+                echo "<a href='index.php?page=".$i."'";
+                if ($i==$page)  echo " class='curPage'";
+                echo ">".$i."</a> ";
+            }; 
             
         ?>
         </article>
