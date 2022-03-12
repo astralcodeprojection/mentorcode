@@ -95,3 +95,9 @@
 </body>
 
 </html>
+            <a class="page-link <?= echo $page <= 1 ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page-1);?>">PreviousTest</a>;
+             echo "<a $page <= 1 ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page-1);?>">PreviousTest </a>";
+
+
+            <a class="page-link <?= echo $page >= $pages ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page+1);?>">NextTest</a>;
+            echo "<a $page >= $pages ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page+1);?>">NextTest</a>";

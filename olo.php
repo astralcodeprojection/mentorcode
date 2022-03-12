@@ -75,44 +75,52 @@
             <?php } ?>
             </div>
             <br><br><br>
-           <?php
-            require_once("connect-db.php");
-            $sql3 = "SELECT COUNT(itemId) AS total FROM menuitems";  
-                      
-            $error3 = "";
+            <div class="row">
+                <div class="col-md-4">
+                  
+                </div>
+                <div class="col-md-4">
+                  <?php
+                        require_once("connect-db.php");
+                        $sql3 = "SELECT COUNT(itemId) AS total FROM menuitems";  
+                                
+                        $error3 = "";
 
-            
-            $statement3 = $db->prepare($sql3);
-            
-           
-        
-            if($statement3->execute()){
-                $pagenation = $statement3->fetchAll();
+                        
+                        $statement3 = $db->prepare($sql3);
+                        
+                    
+                    
+                        if($statement3->execute()){
+                            $pagenation = $statement3->fetchAll();
+                            
+                            $statement3->closeCursor();
+                            $total_pages = ceil($pagenation[0]["total"] / $results_per_page);
+                        
+                        echo "<a href='olo.php?page=".($page-1)."' class='button text-secondary fw-bold'>Previous  </a>"; 
                 
-                $statement3->closeCursor();
-                 $total_pages = ceil($pagenation[0]["total"] / $results_per_page);
-            
-            echo "<a href='olo.php?page=".($page-1)."' class='button'>Previous  </a>"; 
-            <a class="page-link <?= echo $page <= 1 ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page-1);?>">PreviousTest</a>;
-    
-    
 
-            for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
-                echo "<a href='olo.php?page=".$i."'";
-                if ($i==$page)  echo " class='curPage'";
-                echo ">".$i."</a> ";
-            }    
-            echo "<a href='olo.php?page=".($page+1)."' class='button'> NEXT</a>";
-            <a class="page-link <?= echo $page >= $pages ? 'disabled': ''; ?>" href="olo.php?page=<?= ($page+1);?>">NextTest</a>;
-            }else{
-                $error3= "Error Loading.";
-            }
+                        for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+                            echo "<a href='olo.php?page=".$i."' class=text-secondary ";
+                            if ($i==$page)  echo " class='curPage text-secondary '";
+                            echo ">".$i."</a> ";
+                        }    
+                        echo "<a href='olo.php?page=".($page+1)."' class='button text-secondary fw-bold'> Next</a>";
+                        }else{
+                            $error3= "Error Loading.";
+                        }
 
 
+                    
+                    
+                        
+                    ?>
+                </div>
+                <div class="col-md-4">
+                  
+                </div>
+            </div>
            
-        
-            
-        ?>
         </article>
         </div>
 
