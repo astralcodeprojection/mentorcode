@@ -11140,6 +11140,15 @@ textarea.form-control-lg {
   max-height: 10rem;
 }
 
+.page-link {
+  position: relative;
+  display: inline;
+  color: #000000;
+  text-decoration: none;
+  background-color: #fff;
+  border: 0px solid #dee2e6;
+}
+
 .mainPage {
   padding: 10rem 0 0 0;
   width: 100%;

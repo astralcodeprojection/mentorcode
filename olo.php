@@ -97,24 +97,34 @@
                             $statement3->closeCursor();
                             $total_pages = ceil($pagenation[0]["total"] / $results_per_page);
                         
-                        echo "<a href='olo.php?page=".($page-1)."' class='button text-secondary fw-bold'>Previous  </a>"; 
-                
-
+                       // echo "<a href='olo.php?page=".($page-1)."' class='button text-secondary fw-bold'>Previous  </a>"; 
+                        ?>
+                        <?php
+                        if($page <= 1) {
+                        ?>
+                        <a class="page-link disabled">PreviousTest </a>
+                        <?php } else{ ?>
+                            <a class="page-link" href="olo.php?page=<?= ($page-1);?>">Previous </a>
+                        <?php } ?>
+                        <?php
                         for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
                             echo "<a href='olo.php?page=".$i."' class=text-secondary ";
                             if ($i==$page)  echo " class='curPage text-secondary '";
                             echo ">".$i."</a> ";
                         }    
-                        echo "<a href='olo.php?page=".($page+1)."' class='button text-secondary fw-bold'> Next</a>";
+                        //echo "<a href='olo.php?page=".($page+1)."' class='button text-secondary fw-bold'> Next</a>";
                         }else{
                             $error3= "Error Loading.";
                         }
-
-
-                    
-                    
-                        
-                    ?>
+                        ?>
+                        <?php
+                        if($page == $total_pages) {
+                        ?>
+                        <a class="page-link disabled">NextTest </a>
+                        <?php } else{ ?>
+                            <a class="page-link" href="olo.php?page=<?= ($page+1);?>">Next </a>
+                        <?php } ?>
+                   
                 </div>
                 <div class="col-md-4">
                   

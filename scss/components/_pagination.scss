@@ -1,0 +1,10 @@
+@use "../custom" as *;
+
+.page-link {
+  position: relative;
+  display: inline;
+  color: #000000;
+  text-decoration: none;
+  background-color: #fff;
+  border: 0px solid #dee2e6;
+}
