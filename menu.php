@@ -28,6 +28,7 @@ session_start();
       <div class="row">
         <div class="col-md-12">
             <article class="left">
+            <h3>Filters<h3><br>
             
             <?php
 
@@ -65,7 +66,44 @@ session_start();
                 </div>
                 
             </div>
-            <br><br><br>
+            <br>
+            <?php
+
+                require_once("connect-db.php");
+                
+                $sql9 = "SELECT * FROM menuitems";
+                $error9 = "";
+            
+                $statement9 = $db->prepare($sql);
+                
+            
+                if($statement9->execute()){
+                    $meal = $statement9->fetchAll();
+                    $statement9->closeCursor();
+                    
+                }else{
+                    $error9= "Error finding items.";
+                }
+            
+               
+            ?>
+            <div class="cardComponent">
+           
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Meal Type
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <?php
+                        foreach($meal as $c){?>
+                    
+                            <a class="dropdown-item" href="#"><?php echo$c["mealType"];?></a>
+                         <?php } ?>
+                    </div>
+                </div>
+                
+            </div>
+            <br><br>
             <?php
 
                 require_once("connect-db.php");
