@@ -10,6 +10,10 @@ session_start();
     <title>Ted's Tasty Taco Truck</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="js/style.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -24,85 +28,47 @@ session_start();
         <br><br>
 
   <!-- START THE DESCRIPTION CONTENT  -->
-   
+    <div class="row">
+          
+           <div class="col-md-1"></div>
+           <div class="col-md-10">
+                <h2>Shop<h2>
+                 <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('entree')"> Nature</button>
+                    <button class="btn" onclick="filterSelection('snack')"> Cars</button>
+                </div>
+                <div class="row">
+                    <?php
+                            foreach($customers as $c){?>
+                            <!-- foreach($customers as $c->fetch_assoc()){?>  -->
+                                    <div class="column <?php echo $c["mealType"];?>" >
+                                        <div class="card?>" style="width: 18rem;">
+                                            <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $c["name"];?></h5>
+                                                <h5 class="card-title"> <?php echo $c["price"]." $";?></h5>
+                                                <p class="card-text"><?php echo $c["descr"];?></p>
+                                                <form action="addcart.php" method="post">
+                                                    <input type="hidden" name="itemId" value="<?php echo $c["itemId"];?>">
+                                                    <button class="btn btn-primary" type="submit">Add to Cart</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                
+                        <?php } ?>
+                    </div>
+                
+           </div>
+           <div class="col-md-1"></div>
+
+       </div>  
       <div class="row">
         <div class="col-md-12">
             <article class="left">
-            <h3>Filters<h3><br>
             
-            <?php
-
-                require_once("connect-db.php");
-                
-                $sql0 = "SELECT * FROM menuitems";
-                $error0 = "";
-            
-                $statement0 = $db->prepare($sql);
-                
-            
-                if($statement0->execute()){
-                    $categories = $statement0->fetchAll();
-                    $statement0->closeCursor();
-                    
-                }else{
-                    $error0= "Error finding items.";
-                }
-            
-               
-            ?>
-            <div class="cardComponent">
-           
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Catagories
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <?php
-                        foreach($catagories as $c){?>
-                    
-                            <a class="dropdown-item" href="#"><?php echo$c["catagory"];?></a>
-                         <?php } ?>
-                    </div>
-                </div>
-                
-            </div>
-            <br>
-            <?php
-
-                require_once("connect-db.php");
-                
-                $sql9 = "SELECT * FROM menuitems";
-                $error9 = "";
-            
-                $statement9 = $db->prepare($sql);
-                
-            
-                if($statement9->execute()){
-                    $meal = $statement9->fetchAll();
-                    $statement9->closeCursor();
-                    
-                }else{
-                    $error9= "Error finding items.";
-                }
-            
-               
-            ?>
-            <div class="cardComponent">
-           
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Meal Type
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <?php
-                        foreach($meal as $c){?>
-                    
-                            <a class="dropdown-item" href="#"><?php echo$c["mealType"];?></a>
-                         <?php } ?>
-                    </div>
-                </div>
-                
-            </div>
             <br><br>
             <?php
 
