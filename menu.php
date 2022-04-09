@@ -1,5 +1,12 @@
 <?php
+// start the session
 session_start();
+echo "In here";
+echo $_SESSION["userId"];
+echo $_SESSION["logged_in"];
+echo $_SESSION["userId"];
+$_SESSION["guest_login"] = "true";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +17,7 @@ session_start();
     <title>Ted's Tasty Taco Truck</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="js/style.css">
+     <script rel="stylesheet" href="js/filter.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -35,15 +42,37 @@ session_start();
                 <h2>Shop<h2>
                  <div id="myBtnContainer">
                     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                    <button class="btn" onclick="filterSelection('entree')"> Nature</button>
-                    <button class="btn" onclick="filterSelection('snack')"> Cars</button>
+                    <button class="btn" onclick="filterSelection('entree')"> Entree</button>
+                    <button class="btn" onclick="filterSelection('snack')"> Snack</button>
                 </div>
-                <div class="row">
+                <div class="cardComponent">
+                    <?php
+                    
+                    $userId = $_SESSION["userId"];
+                    
+                    require_once("connect-db.php");
+                    $error1 = "";
+
+                    $sql = "select * from menuItems";
+                
+                    $statement1 = $db->prepare($sql);
+                    $statement1 -> bindValue(':userId' , $userId);
+                    
+                
+                    if($statement1->execute()){
+                        $customers = $statement1->fetchAll();
+                        $statement1->closeCursor();
+                    }else{
+                        $error1= "Error finding tickets.";
+                    }
+                
+                //ajax
+                ?>
                     <?php
                             foreach($customers as $c){?>
                             <!-- foreach($customers as $c->fetch_assoc()){?>  -->
                                     <div class="column <?php echo $c["mealType"];?>" >
-                                        <div class="card?>" style="width: 18rem;">
+                                        <div class="card" style="width: 18rem;">
                                             <img src="<?php echo $c["img"];?>" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <h5 class="card-title"><?php echo $c["name"];?></h5>

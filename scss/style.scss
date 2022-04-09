@@ -1,7 +1,8 @@
-//@use 'custom';
+@use 'custom';
 
 @use 'components/card';
 @use 'components/pagination';
+@use 'components/filter';
 
 @use 'sections/footer';
 @use 'sections/mainPage';

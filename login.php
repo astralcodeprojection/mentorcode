@@ -47,6 +47,7 @@ session_start();
                         $userId = $_SESSION["userId"];
                         $_SESSION["admin_login"] = "true";
                         $_SESSION["logged_in"] = "true";
+                        $_SESSION["guest_login"] = "false";
                     ?>
                 <script type="text/javascript">
                     window.location = "admin.php";
@@ -68,7 +69,8 @@ session_start();
                     $statement1->closeCursor();
 
                     foreach ($log as $u=>$value){
-                        print_r($value);
+                        // print_r($value);
+                        // echo $_SESSION["guest_login"];
                         foreach($log as $u => $value){
                                 foreach($value as $x => $v){
                                     if(is_string($v)) {
@@ -79,6 +81,7 @@ session_start();
                                 }
                                 
                                 if($v == $username && $v == $password){
+                                    $_SESSION["guest_login"] = "false";
                                     $_SESSION["logged_in"] = "true";
                                 }
                             }

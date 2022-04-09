@@ -14,6 +14,13 @@ $secondary:     $footer;
 // - IMPORT BOOTSTRAP ( The entire bootstrap with everything)
 // ##########################################
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@200&display=swap');
+
+h1, h2, h3  {
+    //--headings-font-family: Helvetica;
+    --bs-body-font-family: 'Beau Rivage', 'Oswald';
+    
+}
 
 // ##########################################
 //   OPTION 2: 

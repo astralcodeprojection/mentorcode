@@ -1,5 +1,12 @@
 <?php
-    require_once("userscript.php");
+// start the session
+session_start();
+echo "In here";
+echo $_SESSION["userId"];
+echo $_SESSION["logged_in"];
+echo $_SESSION["userId"];
+$_SESSION["guest_login"] = "true";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +61,7 @@
             <table>
                 <tr>
                  
-                    <th>Menu Item</th>
+                    <th>Item</th>
                     <th>Price</th>
                     <th>qty</th>
                     <th>user Id</th>
@@ -85,6 +92,7 @@
            <article>
            
           <div>
+              
                         <form action="confirmpurchase.php" method="post">
                         
                         <button type="submit">Checkout</button>
