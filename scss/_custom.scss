@@ -2,35 +2,16 @@
 $example: #f8f0e9;
 $footer: #151414;
 
+$primary: $example;
+$secondary: $footer;
 
-
-
-$primary:       $example;
-$secondary:     $footer;
-
-
-// ##########################################
-//   OPTION 1: 
-// - IMPORT BOOTSTRAP ( The entire bootstrap with everything)
-// ##########################################
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 
-h1, h2, h3  {
-    //--headings-font-family: Helvetica;
-    --bs-body-font-family: 'Beau Rivage', 'Oswald';
-    
+* {
+    h2 {
+        font-family: 'Playfair Display', serif;
+    }
+
 }
-
-// ##########################################
-//   OPTION 2: 
-// - IMPORT IMPORT ONLY THE PART OF BOOTSTRAP YOU WANT TO USE
-// ##########################################
-
-// @import "../node_modules/bootstrap/scss/functions";
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
-
-// Include any optional Bootstrap components as you like
-// @import "../node_modules/bootstrap/scss/root";
-// @import "../node_modules/bootstrap/scss/reboot";
