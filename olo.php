@@ -6,6 +6,7 @@ echo $_SESSION["userId"];
 echo $_SESSION["logged_in"];
 echo $_SESSION["userId"];
 $_SESSION["guest_login"] = "true";
+echo $_SESSION["guest_login"];
 
 ?>
 <!DOCTYPE html>

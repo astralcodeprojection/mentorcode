@@ -1,7 +1,14 @@
 <?php
-    require_once("userscript.php");
-?>
+// start the session
+session_start();
+echo "In here";
+echo $_SESSION["userId"];
+echo $_SESSION["logged_in"];
+echo $_SESSION["userId"];
+$_SESSION["guest_login"] = "true";
+echo $_SESSION["guest_login"];
 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -73,7 +80,19 @@
                         <input type="text" name="itemId" value="<?php echo $c["itemId"];?>"><br>
                         <br>
                         User Id (You)
-                        <input type="text" name="userId" value="<?php echo $_SESSION["userId"];?>"><br>
+                        <input type="text" name="userId" value="<?php 
+                        
+                        if($_SESSION["logged_in"] = "true"){
+    
+                            echo "user";
+                        }
+                        if($_SESSION["guest_logon"] = "true"){
+    
+                            echo "guest";
+                        }
+                        
+                        
+                        ?>"><br>
                         <br>
                         Item Name:
                         <input type="text" name="name" value="<?php echo $c["name"];?>" readonly>
